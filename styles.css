@@ -1,0 +1,271 @@
+/* ======== Estilos Generales ======== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* ======== Header ======== */
+/* Contenedor principal del header */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    color: #000;  /* Se usa texto oscuro para contraste con fondo blanco */
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo img {
+    height: 40px;
+}
+
+/* ======== Menú Hamburguesa (Todas las categorías) ======== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Contenido del dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px;
+}
+
+/* Estilos para los enlaces y texto dentro del dropdown */
+.dropdown-content a,
+.dropdown-submenu span {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* El dropdown se muestra al hacer click (utilizando :focus-within) */
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+/* ======== Barra de Búsqueda y Filtro ======== */
+.busqueda-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Filtro (select) de la barra de búsqueda */
+.filtro-busqueda {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+/* Contenedor del buscador */
+.buscador {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Input del buscador */
+.buscador input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 200px;
+}
+
+/* Botón del buscador */
+.buscador button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ======== Usuario y Cesta ======== */
+.usuario,
+.cesta {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.usuario i,
+.cesta i {
+    margin-right: 5px;
+}
+
+/* ======== Sección 1: Ticker de Ofertas ======== */
+.ticker {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+}
+
+.ticker p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ======== Sección 2: Oferta Destacada ======== */
+.offer-banner {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.offer-content h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.offer-content p {
+    font-size: 16px;
+}
+
+/* ======== Sección 3: Productos (Grid de 6 columnas) ======== */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.producto {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.producto img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.producto h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.producto p {
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.producto button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.producto button:hover {
+    background-color: #e65c00;
+}
+
+/* ======== Footer ======== */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: white;
+}
+
+/* ======== Responsive ======== */
+
+/* Tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .busqueda-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .buscador {
+        width: 100%;
+        margin-top: 5px;
+    }
+    .buscador input {
+        width: 100%;
+    }
+    /* Grid de productos en 3 columnas para tablets */
+    .productos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Móviles (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    .logo img {
+        height: 30px;
+    }
+    .dropbtn {
+        padding: 8px;
+        font-size: 14px;
+    }
+    .filtro-busqueda {
+        font-size: 14px;
+        padding: 4px;
+    }
+    .buscador input {
+        padding: 4px;
+        width: 100%;
+    }
+    .buscador button {
+        padding: 4px;
+    }
+    .usuario,
+    .cesta {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+    .offer-banner {
+        width: 95%;
+        padding: 15px;
+    }
+    /* Grid de productos en 2 columnas para móviles */
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
