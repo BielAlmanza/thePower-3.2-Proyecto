@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 :root {
+    --mainSource: 'Open Sans', sans-serif;
     --primary-orange: #ff6600;
     --hover-orange: #e65c00;
     --white: #ffffff;
@@ -7,26 +9,38 @@
     --light-gray: #e0e0e0;
     --border-gray: #ccc;
 }
-
+/* Fuente golbal*/
+* {
+    font-family: var(--mainSource) !important;
+}
 /* ======== Estilos Generales ======== */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 0px;
     padding: 0;
     background-color: #f5f5f5;
 }
 
 /* ======== Header ======== */
 /* Contenedor principal del header */
-.container {
+header {
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0; /* Línea divisoria gris */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+}
+
+/* Contenedor interno del header */
+header .container {
+    width: 100%;
+    max-width: 1570px; /* Mismo ancho máximo que el main */
+    margin: 0 auto;    /* Centra el contenido horizontalmente */
+    padding: 13px 90px; /* Ajusta el padding interno para que no quede demasiado apretado */
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    color: #000;  /*Texto oscuro */
-    flex-wrap: wrap;
-    gap: 10px; /* separación para evitar solapamientos */
+    justify-content: flex-start;
+    gap: 10px;
 }
 
 /* Logo */
@@ -34,24 +48,28 @@ body {
     flex: 1; /* Ocupa espacio proporcionalmente */
     display: flex;
     align-items: center;
+    margin-left:60px;
 }
 .logo img {
-    height: 40px;
+    height: 50px;
 }
 
 /* ======== Menú Hamburguesa (Todas las categorías) ======== */
 .dropdown {
+    flex: 1;
     position: relative;
     display: inline-block;
 }
 
 .dropbtn {
-    background-color: #ff6600;
-    color: white;
+    font-size: 17px!important;
+    line-height: 20.4px;
+    text-align: left;
+    letter-spacing: normal;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     padding: 10px;
     border: none;
-    cursor: pointer;
-    font-size: 16px;
 }
 
 /* Contenido del dropdown */
@@ -94,14 +112,14 @@ body {
 
 /* Filtro (select) de la barra de búsqueda */
 .filtro-busqueda {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 5px;
+    padding: 8px;
+    border: none;
+    border-right: 1px solid #ccc;
 }
 
 /* Contenedor del buscador */
 .buscador {
+    flex: 1;
     display: flex;
     align-items: center;
     background: white;
@@ -114,7 +132,7 @@ body {
     border: none;
     outline: none;
     padding: 5px;
-    width: 200px;
+    width: 100%;
 }
 
 /* Botón del buscador */
@@ -124,6 +142,30 @@ body {
     cursor: pointer;
 }
 
+.btn-buscar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.btn-buscar img {
+    width: 20px; /* Ajusta el tamaño según necesites */
+    height: 20px;
+    display: block;
+}
+.busqueda-container {
+    flex: 3;  /* Le damos más espacio al buscador */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ccc;  /* Línea del contorno de 1px */
+    border-radius: 5px;      /* Opcional, para esquinas redondeadas */
+    overflow: hidden;        /* Evita que se dupliquen bordes en los hijos */
+}
 /* ======== Usuario y Cesta ======== */
 .usuario,
 .cesta {
@@ -138,6 +180,12 @@ body {
 .usuario i,
 .cesta i {
     margin-right: 5px;
+}
+
+/* ======== MAIN ========================================================================================= */
+main {
+    max-width: 1570px; /* O el ancho máximo que prefieras */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
 }
 
 /* ======== Sección 1: Ticker de Ofertas ======== */
@@ -227,7 +275,7 @@ footer {
     color: white;
 }
 
-/* ======== Responsive ================================================================ */
+/* ======== Apartado Responsive ==================================================================================== */
 
 /* Tablets (max-width: 768px) */
 @media screen and (max-width: 768px) {

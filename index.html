@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PcComponentes | Tienda de Informática y Tecnología online</title>
+    <title>PcComponentes.com | Tienda de Informática y Tecnología online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="img/png" href="img/favicon2.png">
+
 </head>
 <body>
     <!-- Header: Logo, Menú Hamburguesa, Buscador con Filtro, Usuario y Cesta -->
@@ -13,8 +15,11 @@
         <div class="container">
             <!-- Logo -->
             <div class="logo">
-                <img src="img/logo.svg.svg" alt="Logo de la tienda">
+                <a href="index.html">
+                    <img src="img/logo.svg.svg" alt="Logo de la tienda">
+                </a>
             </div>
+            
             <!-- Menú Hamburguesa (Todas las categorías) -->
             <div class="dropdown" tabindex="0">
                 <button class="dropbtn">&#9776; Todas las categorías</button>
@@ -40,13 +45,14 @@
             <!-- Buscador con Filtro (a la izquierda del buscador) -->
             <div class="busqueda-container">
                 <select class="filtro-busqueda">
+                    <option value="" disabled selected hidden>Todo el catálogo</option>
                     <option>Días Naranjas</option>
                     <option>Todo el catálogo</option>
                     <option>Reacondicionados</option>
                 </select>
                 <div class="buscador">
                     <input type="text" placeholder="Buscar">
-                    <button>Buscar penmdiente bprrar por logo </button>
+                    <button class="btn-buscar"><img src="img/lupa.svg" alt="Buscar"></button>
                 </div>
             </div>
             <!-- Usuario y Cesta -->
@@ -59,6 +65,8 @@
         </div>
     </header>
 
+    <!-- Contenido de la página -->
+<main> 
     <!-- Sección 1: Ticker de Ofertas -->
     <section class="ticker">
         <p>!Ofertas Flash Informática! Portátiles, Componentes, Smartphones, Televisores, DIAS NARANJAS !!HASTA -50%!</p>
@@ -111,6 +119,7 @@
             <button>Comprar</button>
         </article>
     </section>
+</main>
 
     <!-- Footer -->
     <footer>
