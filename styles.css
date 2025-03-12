@@ -1,3 +1,13 @@
+:root {
+    --primary-orange: #ff6600;
+    --hover-orange: #e65c00;
+    --white: #ffffff;
+    --black: #222222;
+    --gray: #f5f5f5;
+    --light-gray: #e0e0e0;
+    --border-gray: #ccc;
+}
+
 /* ======== Estilos Generales ======== */
 body {
     font-family: Arial, sans-serif;
@@ -14,11 +24,17 @@ body {
     justify-content: space-between;
     background-color: #ffffff;
     padding: 10px 20px;
-    color: #000;  /* Se usa texto oscuro para contraste con fondo blanco */
+    color: #000;  /*Texto oscuro */
     flex-wrap: wrap;
+    gap: 10px; /* separación para evitar solapamientos */
 }
 
 /* Logo */
+.logo {
+    flex: 1; /* Ocupa espacio proporcionalmente */
+    display: flex;
+    align-items: center;
+}
 .logo img {
     height: 40px;
 }
@@ -69,9 +85,11 @@ body {
 
 /* ======== Barra de Búsqueda y Filtro ======== */
 .busqueda-container {
+    flex: 2;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 /* Filtro (select) de la barra de búsqueda */
@@ -109,8 +127,10 @@ body {
 /* ======== Usuario y Cesta ======== */
 .usuario,
 .cesta {
+    flex: 1;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     cursor: pointer;
     margin-left: 10px;
 }
@@ -207,13 +227,19 @@ footer {
     color: white;
 }
 
-/* ======== Responsive ======== */
+/* ======== Responsive ================================================================ */
 
 /* Tablets (max-width: 768px) */
 @media screen and (max-width: 768px) {
+    .logo img {
+        height: 30px;
+        content: url(img/favicon.png); /* Reemplaza con el logo pequeño */
+        height: 40px; /* Ajusta el tamaño si es necesario */
+        }
     .container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Mantiene los elementos en una fila */
+        flex-wrap: wrap; /* Permite que los elementos se muevan si no caben */
+        justify-content: center; /* Centra los elementos */
     }
     .busqueda-container {
         width: 100%;
@@ -230,6 +256,39 @@ footer {
     .productos {
         grid-template-columns: repeat(3, 1fr);
     }
+    .dropbtn {
+        font-size: 0; /* Oculta el texto */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px; /* Ajusta el tamaño del botón */
+        height: 40px;
+        padding: 0;
+    }
+    .dropbtn::before {
+        content: "\2630"; /* Código Unicode del icono de hamburguesa */
+        font-size: 20px; /* Tamaño del icono */
+        color: white;
+    }
+
+    .busqueda-container {
+        font-size: 0; /* Oculta el texto */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px; /* Ajusta el tamaño del botón */
+        height: 40px;
+        padding: 0;
+    }
+    .busqueda-container::before {
+        content: "\2630"; /* Código Unicode del icono de hamburguesa */
+        font-size: 20px; /* Tamaño del icono */
+        color: white;
+    }
+    .ticker{
+        display: none;
+    }
+    .filtro-busqueda{display: none;}
 }
 
 /* Móviles (max-width: 480px) */
@@ -239,6 +298,9 @@ footer {
     }
     .logo img {
         height: 30px;
+        content: url(img/favicon.png); /* Reemplaza con el logo pequeño */
+        height: 40px; /* Ajusta el tamaño si es necesario */
+        }
     }
     .dropbtn {
         padding: 8px;
@@ -268,4 +330,3 @@ footer {
     .productos {
         grid-template-columns: repeat(2, 1fr);
     }
-}
